@@ -21,8 +21,12 @@ def register_student():
     adress = faker.address()
     cell = faker.cellphone_number()
     email = faker.email()
+    clasn = random.choice(["primeiro", "segundo","terceiro"])
+    if clasn in Clas:
+        Clas[clasn].append(name)
+    student = {'Nome': name, 'Matrícula': code, 'Nascimento': birth, 'Endereço': adress, "Telefone": cell, "Email": email, "clas" : clasn}
     Students.append(student)
-    student = {'Nome': name, 'Matrícula': code, 'Nascimento': birth, 'Endereço': adress, "Telefone": cell, "Email": email}
+    
     
 
 def register_Teacher():
@@ -41,3 +45,18 @@ def register_Teacher():
         subjects[discipline].append(name)
     teacher=  {'Nome': name, 'Matrícula': code, 'Nascimento': birth, 'Endereço': adress, "Telefone": cell, "Email": email, "matéria": discipline}
     Teachers.append(teacher)
+
+def program_start():
+    print('////////////////')
+    print("")
+    print("Bem Vindo ao sistema escolar!")
+    print("")
+    print('para Cadastrar Aluno: digite 1')
+    print('para Cadastrar professor: digite 2')
+    print('para cadastrar Disciplina: digite 3')
+    print('para Cadastrar Turma: digite 4')
+    print('para Filtar professores por disciplina: digite 5')
+    print('para Matricular aluno em turnma: digite 6')
+    print('para mostrar as turmas: digite 7')
+    print('para sair do programa digite: "n"')
+    

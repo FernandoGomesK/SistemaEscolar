@@ -10,3 +10,7 @@ subjects = {'matemática': [],
             'inglês': [],
             'geográfia': [],
             'história': []}
+
+Clas = {"primeiro": [],
+        "segundo": [],
+        "terceiro": [],}
