@@ -58,5 +58,6 @@ def program_start():
     print('para Filtar professores por disciplina: digite 5')
     print('para Matricular aluno em turnma: digite 6')
     print('para mostrar as turmas: digite 7')
+    print('para alocar uma disciplina em uma turma, digite 8')
     print('para sair do programa digite: "n"')
     

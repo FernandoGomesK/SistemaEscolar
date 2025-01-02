@@ -43,20 +43,22 @@ while(resp == 'A'):
                 print("comando inválido")
                 print('////////////////') 
                 
-    elif resp =="3":
+    if resp =="3":
         while resp == "3":
             print("digite s para adicionar uma matéria")
             print("digite n para sair da aba de cadastro")
             subject_writing = input("s/n: ")
             if subject_writing == "s":
-                print("o máximo de matérias já foi atingido")
+                new_sub = input("digite o nome da matéria a ser adicionada")
+                subjects[new_sub] = [].append(new_sub)
+                print(subjects)
                 print('////////////////') 
-                resp = "A"
+                resp = "3"
             elif subject_writing =="n":
                 resp= "A"
             else:
                 print("comando inválido")
-                print('////////////////') 
+                print('////////////////')
             
                 
     elif resp == "5":
@@ -80,6 +82,10 @@ while(resp == 'A'):
     elif resp == "7":
         print(Clas)
         resp = "A"
+    
+    elif resp == "8":
+        while resp == "8":
+            print("")
         
     elif resp == "n":
         print("Obrigado por utilizar este programa!")
