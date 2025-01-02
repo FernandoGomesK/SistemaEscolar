@@ -3,6 +3,7 @@ faker = Faker('pt_BR')
 import random
 from newdata import subjects, teachers_full, teachers_code_name
 import string
+from generalfunc import gen_code
 
     #  print("////////////////////")
     #     print("página de Professores")
@@ -18,11 +19,7 @@ import string
     #     elif option == "0":
     #         print("////////////////////")
     
-def gen_code():
-    num = "".join(str(random.randint(1,9)) for _ in range(1,4))
-    letter = random.choice(string.ascii_uppercase)
-    code = letter + num
-    return code
+
     
 def register_teacher():
     code = gen_code()

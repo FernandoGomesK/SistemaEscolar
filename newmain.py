@@ -3,9 +3,13 @@ from faker import Faker
 faker = Faker('pt_BR')
 import random
 import string
-from subfunc import register_subject, show_subject, remove_subject
+from subjectfunc import register_subject, show_subject, remove_subject
 from newdata import subjects, teachers_code_name, teachers_full, classes_all
 from teacherfunc import register_teacher
+from classesfunc import clas_add
+from generalfunc import error_message
+
+
 
 def students_page():
     while True:
@@ -24,7 +28,7 @@ def students_page():
             print("////////////////////")
             break
         else:
-            print("opção inválida")
+            error_message()
         
 def teachers_page():
     while True:
@@ -42,7 +46,7 @@ def teachers_page():
             print("////////////////////")
             return
         else:
-            print("opção inválida")
+            error_message()
             
 def subjects_page():
     while True:
@@ -53,7 +57,7 @@ def subjects_page():
         print("3 Alocar disciplina em uma turma")
         print("4 remover uma disciplina")
         print("0 voltar ao menu principal")
-        # selection of options
+        # selection of subject options
         option = input("selecione uma das opções: ") 
         if option == "1":
             show_subject()
@@ -68,7 +72,7 @@ def subjects_page():
             print("////////////////////")
             return
         else:
-            print("opção inválida, Tente novamente")
+            error_message()
         
             
 def classes_page():
@@ -82,7 +86,13 @@ def classes_page():
         if option == "1":
             print(classes_all)
         elif option == "2":
-            pass
+            clas_add()
+        elif option == "0":
+            print("voltando a página principal")
+            print("////////////////////")
+            return
+        else:
+            error_message()
             
 
 def exitprog():
