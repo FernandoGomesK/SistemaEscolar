@@ -19,5 +19,7 @@ def remove_subject():
         print("essa matéria não se encontra na lista de matérias")
 
 def assign_subject():
+    show_subject()
+    print("digite o nome da matéria para ser adicionada a uma turma")
     pass
 
