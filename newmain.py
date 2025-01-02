@@ -3,8 +3,8 @@ faker = Faker('pt_BR')
 import random
 import string
 from subjectfunc import register_subject, show_subject, remove_subject
-from newdata import subjects, teachers_code_name, teachers_full, classes_all
-from teacherfunc import register_teacher, remove_teacher, resumed_teachers
+from newdata import subjects, teachers_full, classes_all
+from teacherfunc import register_teacher, remove_teacher, resumed_teachers, move_teacher
 from classesfunc import clas_add
 from generalfunc import error_message
 
@@ -46,6 +46,8 @@ def teachers_page():
             print("professor Adicionado")
         elif option == "4":
             remove_teacher()
+        elif option == "2":
+            move_teacher()
         elif option == "5":
             resumed_teachers()
         elif option == "0":
@@ -109,7 +111,7 @@ def exitprog():
 def program_start():
     print("Bem vindo ao Sistema Escolar 2025, selecione uma das opções disponíveis")
     print("1 Página de Alunos")
-    print("2 páina de professores")
+    print("2 página de professores")
     print("3 página de disciplinas")
     print("4 página de turmas")
     print("0 para sair do Sistema")

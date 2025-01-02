@@ -1,13 +1,15 @@
 from faker import Faker
 faker = Faker('pt_BR')
 import random
-from newdata import teachers_full, teachers_code_name
+from newdata import teachers_full, subjects
+from subjectfunc import show_subject
 import string
 from generalfunc import gen_code
 
-def resumed_teachers():
+def resumed_teachers(): 
+           
     for code, teacher in teachers_full.items():
-        print(f"Matrícula: {code}, nome: {teacher['Nome']}, Turma(s): {teacher['Turmas']}, Matéria(s): {teacher["Materia"]}")
+        print(f"Matrícula: {code}, nome: {teacher['Nome']}, Turma(s): {teacher['Turmas']}, Matéria(s): {teacher['Materia']}")
 
 def register_teacher():
     code = gen_code()
@@ -40,6 +42,19 @@ def remove_teacher():
     else:
         print("esse professor não existe")
         
+# moves the teacher to a designated subject
+def move_teacher():
+    resumed_teachers()
+    chose_teacher = input("selecione o código do professor a ser movido: ").upper()
+    if chose_teacher in teachers_full:
+        show_subject()
+        chose_subject = input("digite o código da matéria para adicionar o professor: ").upper()
+        if chose_subject in subjects:
+            teachers_full[chose_teacher]['Materia'].append(subjects[chose_subject])
+        else:
+            print("comando inválido")          
+    else:
+        print("esse professor não se encontra no sistema")
     
     
     
