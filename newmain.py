@@ -4,13 +4,8 @@ faker = Faker('pt_BR')
 import random
 import string
 from subfunc import register_subject, show_subject, remove_subject
-from newdata import subjects
-
-
-def exitprog():
-    print("obrigado por utilizar o Sistema Escolar 2025")
-    global working
-    working = False
+from newdata import subjects, teachers_code_name, teachers_full, classes_all
+from teacherfunc import register_teacher
 
 def students_page():
     while True:
@@ -42,11 +37,10 @@ def teachers_page():
         print("0 Voltar ao Menu principal")
         option = input("Selecione uma das opções: ")
         if option == "1":
-            print("vazio")
-            print("////////////////////")
+            register_teacher()   
         elif option == "0":
             print("////////////////////")
-            break
+            return
         else:
             print("opção inválida")
             
@@ -75,26 +69,27 @@ def subjects_page():
             return
         else:
             print("opção inválida, Tente novamente")
-           
-            
-            
         
-        
-    
-            
-        
-        # if option == "1":
-        #     print("vazio")
-        #     print("////////////////////")
-        # elif option == "0":
-        #     print("////////////////////")
-        #     break
-        # else:
-        #     print("opção inválida")
             
 def classes_page():
-    pass
+    while True:
+        print("////////////////////")
+        print("Página de turmas")
+        print("1 Visualizar todas as turmas")
+        print("2 Adicionar uma turma")
+        print("3 remover uma turma")
+        option = input("selecione uma das opções: ")
+        if option == "1":
+            print(classes_all)
+        elif option == "2":
+            pass
+            
 
+def exitprog():
+    print("obrigado por utilizar o Sistema Escolar 2025")
+    global working
+    working = False
+    
 def program_start():
     print("Bem vindo ao Sistema Escolar 2025, selecione uma das opções disponíveis")
     print("1 Página de Alunos")
@@ -110,8 +105,7 @@ start_menu = {
     "4": classes_page,
     "0": exitprog
 }
-
-    
+   
 while working:
         program_start()
         option = input("Escolha a página a acessar: ")
