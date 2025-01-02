@@ -3,8 +3,14 @@ from faker import Faker
 faker = Faker('pt_BR')
 import random
 import string
-from subfunc import register_subject, show_subject
-from newdata import*
+from subfunc import register_subject, show_subject, remove_subject
+from newdata import subjects
+
+
+def exitprog():
+    print("obrigado por utilizar o Sistema Escolar 2025")
+    global working
+    working = False
 
 def students_page():
     while True:
@@ -53,11 +59,10 @@ def subjects_page():
         print("3 Alocar disciplina em uma turma")
         print("4 remover uma disciplina")
         print("0 voltar ao menu principal")
-        
-        option = input("selecione uma das opções: ")
-        
+        # selection of options
+        option = input("selecione uma das opções: ") 
         if option == "1":
-            print(subjects)
+            show_subject()
         elif option == "2":
             register_subject()
         elif option == "3":
@@ -66,7 +71,11 @@ def subjects_page():
             remove_subject()
         elif option == "0":
             print("voltando a página principal")
+            print("////////////////////")
             return
+        else:
+            print("opção inválida, Tente novamente")
+           
             
             
         
@@ -92,14 +101,17 @@ def program_start():
     print("2 páina de professores")
     print("3 página de disciplinas")
     print("4 página de turmas")
+    print("0 para sair do Sistema")
 
 start_menu = {
     "1": students_page,
     "2": teachers_page,
     "3": subjects_page,
-    "4": classes_page
+    "4": classes_page,
+    "0": exitprog
 }
 
+    
 while working:
         program_start()
         option = input("Escolha a página a acessar: ")

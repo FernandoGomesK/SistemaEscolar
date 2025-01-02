@@ -1,4 +1,4 @@
-from subfunc import*
+
 
 subjects = {
     
