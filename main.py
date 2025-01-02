@@ -2,72 +2,30 @@ from faker import Faker
 faker = Faker('pt_BR')
 import random
 import string
-
-Students = []
-
-subjects = {'matemática': [], 
-            'artes': [],
-            'ciência': [],
-            'Educação Física': [],
-            'português': [],
-            'inglês': [],
-            'geográfia': [],
-            'história': []}
-
-Teachers = []
-
-def gen_code():
-    num = ''.join(str(random.randint(0,9)) for _ in range(4))
-    leter = random.choice(string.ascii_uppercase)
-    code = leter + num
-    return code 
-
-
-def register_student():
-    code = gen_code()
-    birth = faker.date_of_birth()
-    gender = random.choice(["male", "female"])
-    if gender == "male":
-        name = f"{faker.first_name_male()} {faker.last_name()}"
-    else:
-        name = f"{faker.first_name_female()} {faker.last_name()}"
-    adress = faker.address()
-    cell = faker.cellphone_number()
-    email = faker.email()
-    Students.append(student)
-    student = {'Nome': name, 'Matrícula': code, 'Nascimento': birth, 'Endereço': adress, "Telefone": cell, "Email": email}
-
-def register_Teacher():
-    code = gen_code()
-    birth = faker.date_of_birth()
-    gender = random.choice(["male", "female"])
-    if gender == "male":
-        name = f"{faker.first_name_male()} {faker.last_name()}"
-    else:
-        name = f"{faker.first_name_female()} {faker.last_name()}"
-    adress = faker.address()
-    cell = faker.cellphone_number()
-    email = faker.email()
-    discipline = random.choice(['matemática', 'artes', 'ciência', 'Educação Física', 'português', 'inglês', 'geográfia', 'história'])
-    if discipline in subjects:
-        subjects[discipline].append(name)
-    teacher=  {'Nome': name, 'Matrícula': code, 'Nascimento': birth, 'Endereço': adress, "Telefone": cell, "Email": email, "matéria": discipline}
-    Teachers.append(teacher)
+from functions import* 
+from data import*
 
 resp = 'A'
 while(resp == 'A'):
-    print('para Cadastrar Aluno: digite 1')
-    print('para Cadastrar professor: digite 2')
-    print('para cadastrar Disciplina: digite 3')
-    print('para Cadastrar Turma: digite 4')
-    print('para Filtar professores por disciplina: digite 5')
-    print('para Matricular aluno em turnma: digite 6')
-    print('para sair do programa digite: "n"')
+    program_start()
     resp = input("digite um número: ")
     if resp == "1":
-        register_student()
-        print(Students)
-        resp = 'A'
+        while resp == "1":
+            print("digite s para cadastrar Aluno")
+            print("digite n para sair da aba de cadastro")
+            select_student = input('s/n: ')
+            if select_student == "s":
+                register_student()
+                print(Students)
+                print('////////////////')
+                resp = "1"
+            elif select_student == "n":
+                resp = "A"
+                print('////////////////')
+            else:
+                print("comando inválido")
+                print('////////////////')          
+        
     elif resp =="2":
         while resp == "2":
             print("digite s para cadastrar professor")
@@ -83,13 +41,52 @@ while(resp == 'A'):
                 print('////////////////')
             else:
                 print("comando inválido")
-                print('////////////////')   
+                print('////////////////') 
+                
+    if resp =="3":
+        while resp == "3":
+            print("digite s para adicionar uma matéria")
+            print("digite n para sair da aba de cadastro")
+            subject_writing = input("s/n: ")
+            if subject_writing == "s":
+                new_sub = input("digite o nome da matéria a ser adicionada")
+                subjects[new_sub] = [].append(new_sub)
+                print(subjects)
+                print('////////////////') 
+                resp = "3"
+            elif subject_writing =="n":
+                resp= "A"
+            else:
+                print("comando inválido")
+                print('////////////////')
+            
+                
     elif resp == "5":
-        for x in subjects.keys():
-            print(x)
-        select = input("selecione a matéria para visualização dos professores: ")
-        if select in subjects:
-            print(subjects[select])
+        while resp == "5":
+            for x in subjects.keys():
+                print(x)
+            select = input("selecione a matéria para visualização dos professores: ")
+            if select in subjects:
+                print(subjects[select])
+                second_subject = input("deseja consultar outra matéria? s/n: ")
+                if second_subject == "s":
+                    resp = "5"
+                elif second_subject == "n":
+                    resp = "A"
+                else:
+                    print("comando inválido, tente novamente")
+                    print('////////////////')               
+            else:
+                print("comando inválido, tente novamente")
+    
+    elif resp == "7":
+        print(Clas)
+        resp = "A"
+    
+    elif resp == "8":
+        while resp == "8":
+            print("")
+        
     elif resp == "n":
         print("Obrigado por utilizar este programa!")
     else:
