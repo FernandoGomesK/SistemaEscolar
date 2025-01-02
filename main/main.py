@@ -2,8 +2,8 @@ from faker import Faker
 faker = Faker('pt_BR')
 import random
 import string
-from functions import* 
-from data import*
+from main.functions import* 
+from main.data import*
 
 resp = 'A'
 while(resp == 'A'):
