@@ -7,5 +7,5 @@ def clas_add():
     if sub_to_add in classes_all:
         print("essa classe já existe")
     else:
-        classes_all[sub_to_add] = {"students": [], "teachers": [], "code": [gen_code()]}
+        classes_all[sub_to_add] = {"students": [], "teachers": [], "code": gen_code()}
         

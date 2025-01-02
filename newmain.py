@@ -1,14 +1,14 @@
-working = True
 from faker import Faker 
 faker = Faker('pt_BR')
 import random
 import string
 from subjectfunc import register_subject, show_subject, remove_subject
 from newdata import subjects, teachers_code_name, teachers_full, classes_all
-from teacherfunc import register_teacher
+from teacherfunc import register_teacher, remove_teacher, resumed_teachers
 from classesfunc import clas_add
 from generalfunc import error_message
 
+working = True
 
 
 def students_page():
@@ -38,10 +38,16 @@ def teachers_page():
         print("2 Alocar Professor em uma matéria")
         print("3 Alocar professor em uma turma")
         print("4 Remover Professor")
+        print("5 ver todos os professores")
         print("0 Voltar ao Menu principal")
         option = input("Selecione uma das opções: ")
         if option == "1":
-            register_teacher()   
+            register_teacher()
+            print("professor Adicionado")
+        elif option == "4":
+            remove_teacher()
+        elif option == "5":
+            resumed_teachers()
         elif option == "0":
             print("////////////////////")
             return
