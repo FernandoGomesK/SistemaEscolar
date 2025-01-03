@@ -1,7 +1,7 @@
 from faker import Faker
 faker = Faker('pt_BR')
 import random
-from newdata import teachers_full, subjects
+from newdata import teachers_full, subjects, classes_all
 from subjectfunc import show_subject
 import string
 from generalfunc import gen_code
@@ -62,9 +62,9 @@ def move_teacher_clas():
     chose_teacher = input("selecione o código do professor a ser movido: ").upper()
     if chose_teacher in teachers_full:
         show_clas()
-        chose_subject = input("digite o código da matéria para adicionar o professor: ").upper()
-        if chose_subject in subjects:
-            teachers_full[chose_teacher]['Materia'].append(subjects[chose_subject])
+        chose_clas = input("digite o código da matéria para adicionar o professor: ").upper()
+        if chose_clas in classes_all:
+            classes_all[chose_clas]['Professores'].append(teachers_full[chose_teacher])
         else:
             print("comando inválido")          
     else:

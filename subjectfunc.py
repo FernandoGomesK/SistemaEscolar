@@ -11,7 +11,6 @@ def register_subject():
     else:
         subjects[sub_code] = [new_sub]
         
-
 def show_subject():
     organized_sub = sorted(subjects.keys())
     for code, subject in subjects.items():

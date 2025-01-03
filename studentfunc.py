@@ -1,6 +1,7 @@
 from generalfunc import gen_code
-from newdata import students_full, subjects
+from newdata import students_full, subjects, classes_all
 from subjectfunc import show_subject
+from classesfunc import show_clas
 import random
 import string
 from faker import Faker
@@ -52,9 +53,9 @@ def move_student():
     chose_student = input("selecione o código do Aluno a ser movido: ").upper()
     if chose_student in students_full:
         show_subject()
-        chose_subject = input("digite o código da matéria para adicionar o aluno: ").upper()
-        if chose_subject in subjects:
-            students_full[chose_student]['Materia'].append(subjects[chose_subject])
+        chose_clas = input("digite o código da turma para adicionar o aluno: ").upper()
+        if chose_clas in classes_all:
+            classes_all[chose_student]['Estudantes'].append(students_full[chose_student])
         else:
             print("comando inválido")          
     else:
