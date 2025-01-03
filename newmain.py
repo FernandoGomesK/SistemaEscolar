@@ -4,7 +4,7 @@ import random
 import string
 from subjectfunc import register_subject, show_subject, remove_subject
 from newdata import subjects, teachers_full, classes_all, students_full
-from teacherfunc import register_teacher, remove_teacher, resumed_teachers, move_teacher
+from teacherfunc import register_teacher, remove_teacher, resumed_teachers, move_teacher_subject
 from classesfunc import clas_add
 from generalfunc import error_message
 from studentfunc import register_student, remove_student, complete_students, move_student
@@ -49,10 +49,12 @@ def teachers_page():
         if option == "1":
             register_teacher()
             print("professor Adicionado")
+        elif option == "2":
+            move_teacher_subject()
+        elif option == "3":
+            pass
         elif option == "4":
             remove_teacher()
-        elif option == "2":
-            move_teacher()
         elif option == "5":
             resumed_teachers()
         elif option == "0":
