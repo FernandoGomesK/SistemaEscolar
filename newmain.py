@@ -2,10 +2,10 @@ from faker import Faker
 faker = Faker('pt_BR')
 import random
 import string
-from subjectfunc import register_subject, show_subject, remove_subject
+from subjectfunc import register_subject, show_subject, remove_subject, assign_subject
 from newdata import subjects, teachers_full, classes_all, students_full
 from teacherfunc import register_teacher, remove_teacher, resumed_teachers, move_teacher_subject
-from classesfunc import clas_add
+from classesfunc import clas_add, show_clas
 from generalfunc import error_message
 from studentfunc import register_student, remove_student, complete_students, move_student
 
@@ -79,7 +79,7 @@ def subjects_page():
         elif option == "2":
             register_subject()
         elif option == "3":
-            pass
+            assign_subject()
         elif option == "4":
             remove_subject()
         elif option == "0":
@@ -96,9 +96,10 @@ def classes_page():
         print("1 Visualizar todas as turmas")
         print("2 Adicionar uma turma")
         print("3 remover uma turma")
+        print("0 voltar ao menu principal")
         option = input("selecione uma das opções: ")
         if option == "1":
-            print(classes_all)
+            show_clas()
         elif option == "2":
             clas_add()
         elif option == "0":

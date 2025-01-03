@@ -3,12 +3,14 @@ from generalfunc import gen_code
 # função que adiciona matérias a lista
 
 def show_clas():
-    pass
+    for code, clas in classes_all.items():
+        print(f"Código: {code}, Nome: {clas['Nome']}, Alunos: {clas["Estudantes"]}, Professores: {clas["Professores"]}, Matérias: {clas["Matérias"]}")
 
 def clas_add():
-    sub_to_add = input("digite o nome da classe a ser adicionada: ")
-    if sub_to_add in classes_all:
+    clas_to_add = input("digite o nome da classe a ser adicionada: ")
+    if clas_to_add in classes_all:
         print("essa classe já existe")
     else:
-        classes_all[sub_to_add] = {"students": [], "teachers": [], "code": gen_code()}
+        classes_all[gen_code()] = {"Estudantes": [], "Professores": [], "Matérias": [], "Nome": clas_to_add}
+        print(classes_all)
         

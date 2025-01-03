@@ -32,6 +32,7 @@ def register_teacher():
                "Turmas": []}
     teachers_full[code] = teacher
     
+# deletes the teacher from the system
 def remove_teacher():
     resumed_teachers()
     remover = input("digite o código do professor a ser removido: ").upper()
@@ -54,7 +55,8 @@ def move_teacher_subject():
             print("comando inválido")          
     else:
         print("esse professor não se encontra no sistema")
-    
+        
+# moves the teacher to a designated class
 def move_teacher_clas():
     resumed_teachers()
     chose_teacher = input("selecione o código do professor a ser movido: ").upper()

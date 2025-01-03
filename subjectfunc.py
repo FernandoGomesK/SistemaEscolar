@@ -1,5 +1,7 @@
-from newdata import subjects
+from newdata import subjects, classes_all
 from generalfunc import gen_code
+from classesfunc import show_clas
+
 
 def register_subject():
     sub_code = gen_code()
@@ -27,5 +29,14 @@ def remove_subject():
 def assign_subject():
     show_subject()
     print("digite o nome da matéria para ser adicionada a uma turma")
-    pass
+    chose_subject = input("selecione o código da Disciplina a ser movida: ").upper()
+    if chose_subject in subjects:
+        show_clas()
+        chose_clas = input("digite o código da Turma para adicionar a Disciplina: ").upper()
+        if chose_clas in classes_all:
+            classes_all[chose_clas]['Matérias'].append(subjects[chose_subject])
+        else:
+            print("comando inválido")          
+    else:
+        print("esse professor não se encontra no sistema")
 
