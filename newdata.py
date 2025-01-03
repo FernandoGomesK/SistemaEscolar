@@ -10,5 +10,7 @@ classes_all = {
     
 }
 
-students_full = []
+students_full = {
+    
+}
 

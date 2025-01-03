@@ -13,7 +13,7 @@ def register_subject():
 def show_subject():
     organized_sub = sorted(subjects.keys())
     for code, subject in subjects.items():
-        print(f"Matrícula: {code}, matéria: {subjects[code]}")
+        print(f"Código: {code}, matéria: {subjects[code]}")
 
 def remove_subject():
     show_subject()

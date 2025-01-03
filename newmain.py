@@ -3,13 +3,13 @@ faker = Faker('pt_BR')
 import random
 import string
 from subjectfunc import register_subject, show_subject, remove_subject
-from newdata import subjects, teachers_full, classes_all
+from newdata import subjects, teachers_full, classes_all, students_full
 from teacherfunc import register_teacher, remove_teacher, resumed_teachers, move_teacher
 from classesfunc import clas_add
 from generalfunc import error_message
+from studentfunc import register_student, remove_student, complete_students, move_student
 
 working = True
-
 
 def students_page():
     while True:
@@ -22,8 +22,13 @@ def students_page():
         print("0 Voltar ao Menu principal")
         option = input("Selecione uma das opções: ")
         if option == "1":
-            print("vazio")
-            print("////////////////////")
+            complete_students()
+        elif option =="2":
+            register_student()
+        elif option == "3":
+            remove_student()
+        elif option == "4":
+            move_student()    
         elif option == "0":
             print("////////////////////")
             break
@@ -81,8 +86,7 @@ def subjects_page():
             return
         else:
             error_message()
-        
-            
+                    
 def classes_page():
     while True:
         print("////////////////////")
@@ -102,7 +106,6 @@ def classes_page():
         else:
             error_message()
             
-
 def exitprog():
     print("obrigado por utilizar o Sistema Escolar 2025")
     global working

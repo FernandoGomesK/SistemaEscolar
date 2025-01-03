@@ -6,11 +6,10 @@ from subjectfunc import show_subject
 import string
 from generalfunc import gen_code
 
-def resumed_teachers(): 
-           
+def resumed_teachers():         
     for code, teacher in teachers_full.items():
         print(f"Matrícula: {code}, nome: {teacher['Nome']}, Turma(s): {teacher['Turmas']}, Matéria(s): {teacher['Materia']}")
-
+                                                                                           
 def register_teacher():
     code = gen_code()
     birth = faker.date_of_birth()
@@ -22,7 +21,6 @@ def register_teacher():
     adress = faker.address()
     cell = faker.cellphone_number()
     email = faker.email()
-    
     teacher=  {'Nome': name,
                'Matrícula': code,
                'Nascimento': birth,
