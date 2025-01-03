@@ -14,3 +14,11 @@ def clas_add():
         classes_all[gen_code()] = {"Estudantes": [], "Professores": [], "Matérias": [], "Nome": clas_to_add}
         print(classes_all)
         
+def remove_clas():
+    show_clas()
+    remover = input("digite o código da turma a ser removido").upper
+    if remover in classes_all:
+        del classes_all[remover]
+        print("Turma removida")
+    else:
+        print("Essa turma não existe")

@@ -5,7 +5,7 @@ import string
 from subjectfunc import register_subject, show_subject, remove_subject, assign_subject
 from newdata import subjects, teachers_full, classes_all, students_full
 from teacherfunc import register_teacher, remove_teacher, resumed_teachers, move_teacher_subject, move_teacher_clas
-from classesfunc import clas_add, show_clas
+from classesfunc import clas_add, show_clas, remove_clas
 from generalfunc import error_message
 from studentfunc import register_student, remove_student, complete_students, move_student
 
@@ -102,6 +102,8 @@ def classes_page():
             show_clas()
         elif option == "2":
             clas_add()
+        elif option == "3":
+            remove_clas()
         elif option == "0":
             print("voltando a página principal")
             print("////////////////////")
