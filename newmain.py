@@ -1,5 +1,4 @@
-from faker import Faker 
-faker = Faker('pt_BR')
+
 import random
 import string
 from subjectfunc import register_subject, show_subject, remove_subject, assign_subject

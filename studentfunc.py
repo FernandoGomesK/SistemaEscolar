@@ -5,8 +5,7 @@ from classesfunc import show_clas
 import random
 import string
 from datetime import*
-# from faker import Faker
-# faker = Faker('pt_BR')
+
 
 def resumed_students():
     for code, student in students_full.items():
