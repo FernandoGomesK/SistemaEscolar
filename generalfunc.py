@@ -12,7 +12,7 @@ def error_message():
     print("Opcção inválida, tente novamente!")
     print("////////////////////")
 
-def verify_gender(x):
+def verify_gender():
     while True:
         gender = input("Digite o Gênero: M/F: ").strip().upper()
         if gender == "M":
