@@ -24,7 +24,7 @@ def register_teacher():
     code = gen_code()
     #Verifica a idade, e se o professor tem mais de 18 anos
     while True:
-        birth = input("digite a data de nascimento: DD/MM/AAAA")
+        birth = input("digite a data de nascimento DD/MM/AAAA: ")
         try:
             works = datetime.strptime(birth, "%d/%m/%Y")
             age = (datetime.now() - works).days // 365
@@ -38,7 +38,7 @@ def register_teacher():
     gender = verify_gender()
             
     while True:       
-        adress = input("digite o endereço do Aluno: ").strip()
+        adress = input("digite o endereço do Professor: ").strip()
         if adress:
             break
         else:
