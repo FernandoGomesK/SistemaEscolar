@@ -5,7 +5,7 @@ import random
 from newdata import teachers_full, subjects, classes_all
 from subjectfunc import show_subject
 import string
-from generalfunc import gen_code
+from generalfunc import gen_code, verify_gender
 from classesfunc import show_clas
 
 def resumed_teachers():         
@@ -35,16 +35,7 @@ def register_teacher():
         except ValueError:
                 print("Data inválida, Utilize o formato DD/MM/AAAA")
     #Verifica o Genero
-    while True:
-        gender = input("Digite o Gênero: M/F: ").upper()
-        if gender == "M":
-            gender = "Masculino"
-            break
-        elif gender == "F":
-            gender = "Feminino"
-            break
-        else:
-            print("Gênero inválido")
+    gender = verify_gender()
             
     while True:       
         adress = input("digite o endereço do Aluno: ").strip()
@@ -69,6 +60,7 @@ def register_teacher():
     
     teacher=  {'Nome': name,
                'Matrícula': code,
+               'Gênero': gender,
                'Nascimento': birth,
                'Endereço': adress,
                "Telefone": cell,

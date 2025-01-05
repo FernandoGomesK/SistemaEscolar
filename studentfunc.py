@@ -1,4 +1,4 @@
-from generalfunc import gen_code
+from generalfunc import gen_code, verify_gender
 from newdata import students_full, subjects, classes_all
 from subjectfunc import show_subject
 from classesfunc import show_clas
@@ -42,16 +42,9 @@ def register_student():
             print("Data inválida, Utilize o formato DD/MM/AAAA")
             
 
-    while True:
-        gender = input("Digite o Gênero: M/F: ").upper()
-        if gender == "M":
-            gender = "Masculino"
-            break
-        elif gender == "F":
-            gender = "Feminino"
-            break
-        else:
-            print("Gênero inválido")
+    
+    gender = verify_gender()
+        
     while True:       
         adress = input("digite o endereço do Aluno: ").strip()
         if adress:
@@ -75,6 +68,7 @@ def register_student():
         
     student = {'Nome': name,
                'Matrícula': code,
+               'Gênero': gender,
                'Nascimento': birth,
                'Endereco': adress,
                "Telefone": cell,
