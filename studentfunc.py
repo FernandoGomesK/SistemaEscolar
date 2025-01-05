@@ -86,13 +86,18 @@ def remove_student():
         
 def move_student():
     resumed_students()
-    chose_student = input("selecione o código do Aluno a ser movido: ").upper()
+    chose_student = input("selecione o código do Aluno a ser movido: ").upper()   
     if chose_student in students_full:
         show_clas()
-        chose_clas = input("digite o código da turma para adicionar o aluno: ").upper()
-        if chose_clas in classes_all:
-            classes_all[chose_clas]['Estudantes'].append(students_full[chose_student])
+        chose_clas = input("digite o código da turma para adicionar o aluno: ").upper()      
+        if chose_clas in classes_all:           
+            if chose_student not in classes_all[chose_clas]['Estudantes']:
+             classes_all[chose_clas]['Estudantes'].append(students_full[chose_student])
+            else:
+                print("O estudante já esta na turma")           
+        if chose_clas not in students_full[chose_student]['Turma']:
+            students_full[chose_student]['Turma'].append([chose_clas])
         else:
-            print("comando inválido")          
+            print("Este Estudante já esta nessa turma")                  
     else:
-        print("esse aluno não se encontra no sistema")
+        print("esse Estudante não se encontra no sistema")

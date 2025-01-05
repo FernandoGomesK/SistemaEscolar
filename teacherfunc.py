@@ -101,9 +101,15 @@ def move_teacher_clas():
         show_clas()
         chose_clas = input("digite o código da matéria para adicionar o professor: ").upper()
         if chose_clas in classes_all:
-            classes_all[chose_clas]['Professores'].append(teachers_full[chose_teacher])
+            if chose_teacher not in classes_all[chose_clas]['Professores']:
+                classes_all[chose_clas]['Professores'].append(teachers_full[chose_teacher])
+            else:
+                print("esse Professor já se encontra nessa turma")
+        if chose_clas not in teachers_full[chose_teacher]['Turma']:
+            teachers_full[chose_teacher]['Turma'].append([chose_clas])
         else:
-            print("comando inválido")          
+            print("Este Professor já se encontra nessa turma")   
+                
     else:
         print("esse professor não se encontra no sistema")
     
