@@ -21,3 +21,15 @@ def verify_gender():
             return "Feminino"
         else:
             print("Gênero inválido")
+
+def check_email(x):
+        pattern = r'^([a-z\d.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$'
+        if re.match(pattern, x):
+            return True
+        return False
+    
+def check_number(x):
+    pattern =    r'^\+(\d{1,3})\s\((\d{1,3})\)\s(\d{4,5})-(\d{4})$'
+    if re.match(pattern, x):
+        return True
+    return False

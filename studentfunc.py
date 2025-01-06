@@ -1,4 +1,4 @@
-from generalfunc import gen_code, verify_gender
+from generalfunc import gen_code, verify_gender, check_email, check_number
 from newdata import students_full, subjects, classes_all
 from subjectfunc import show_subject
 from classesfunc import show_clas
@@ -53,17 +53,23 @@ def register_student():
             
     while True:
         cell = input("digite o número de telefone do responsável: ").strip()
-        if cell:
-            break
-        else:
-            print("número inválido")
+        if not cell:
+            print("Por favor digite um número válido")
+            continue      
+        if not check_number(cell):
+            print("Número inválido")
+            continue
+        break
         
     while True:
         email = input("digite o Email: ").strip()
-        if email:
-            break
-        else:
-            print("E-Mail, inválido")
+        if not email:
+            print("por favor digite um endereço de e-mail válido")
+            continue  
+        if not check_email(email):
+            print("E-Mail inválido")
+            continue
+        break
         
     student = {'Nome': name,
                'Matrícula': code,
