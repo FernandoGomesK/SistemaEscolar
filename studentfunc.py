@@ -92,12 +92,12 @@ def move_student():
         chose_clas = input("digite o código da turma para adicionar o aluno: ").upper()      
         if chose_clas in classes_all:           
             if chose_student not in classes_all[chose_clas]['Estudantes']:
-             classes_all[chose_clas]['Estudantes'].append(students_full[chose_student])
+             classes_all[chose_clas]['Estudantes'].append(chose_student)
             else:
                 print("O estudante já esta na turma")           
-        if chose_clas not in students_full[chose_student]['Turma']:
-            students_full[chose_student]['Turma'].append([chose_clas])
-        else:
-            print("Este Estudante já esta nessa turma")                  
+            if chose_clas not in students_full[chose_student]['Turma']:
+                students_full[chose_student]['Turma'].append(chose_clas)
+            else:
+                print("Este Estudante já esta nessa turma")                  
     else:
         print("esse Estudante não se encontra no sistema")

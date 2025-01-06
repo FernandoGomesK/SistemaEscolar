@@ -45,7 +45,7 @@ def register_teacher():
             print("endereço inválido")
             
     while True:
-        cell = input("digite o número de telefone do responsável: ").strip()
+        cell = input("digite o número de telefone do Professor: ").strip()
         if cell:
             break
         else:
@@ -100,15 +100,18 @@ def move_teacher_clas():
     if chose_teacher in teachers_full:
         show_clas()
         chose_clas = input("digite o código da matéria para adicionar o professor: ").upper()
+        
         if chose_clas in classes_all:
+            
             if chose_teacher not in classes_all[chose_clas]['Professores']:
-                classes_all[chose_clas]['Professores'].append(teachers_full[chose_teacher])
+                classes_all[chose_clas]['Professores'].append(chose_teacher)
             else:
                 print("esse Professor já se encontra nessa turma")
-        if chose_clas not in teachers_full[chose_teacher]['Turma']:
-            teachers_full[chose_teacher]['Turma'].append([chose_clas])
-        else:
-            print("Este Professor já se encontra nessa turma")   
+                
+            if chose_clas not in teachers_full[chose_teacher]['Turma']:
+                teachers_full[chose_teacher]['Turma'].append([chose_clas])
+            else:
+                print("Este Professor já se encontra nessa turma")   
                 
     else:
         print("esse professor não se encontra no sistema")
