@@ -2,7 +2,7 @@
 # faker = Faker('pt_BR')
 from datetime import*
 import random
-from newdata import teachers_full, subjects, classes_all
+from data import teachers_full, subjects, classes_all
 from subjectfunc import show_subject
 import string
 from generalfunc import gen_code, verify_gender, check_email, check_number
@@ -50,7 +50,7 @@ def register_teacher():
             print("Por favor digite um número válido")
             continue      
         if not check_number(cell):
-            print("Número inválido")
+            print("Número inválido, por favor digite no formato (+** (**) *****-**):")
             continue
         break
         

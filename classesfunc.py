@@ -1,4 +1,4 @@
-from newdata import classes_all
+from data import classes_all
 from generalfunc import gen_code
 # função que adiciona matérias a lista
 

@@ -1,4 +1,4 @@
-from newdata import subjects, classes_all
+from data import subjects, classes_all
 from generalfunc import gen_code
 from classesfunc import show_clas
 

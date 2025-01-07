@@ -2,7 +2,7 @@
 import random
 import string
 from subjectfunc import register_subject, show_subject, remove_subject, assign_subject
-from newdata import subjects, teachers_full, classes_all, students_full
+from data import subjects, teachers_full, classes_all, students_full
 from teacherfunc import register_teacher, remove_teacher, resumed_teachers, move_teacher_subject, move_teacher_clas
 from classesfunc import clas_add, show_clas, remove_clas
 from generalfunc import error_message
