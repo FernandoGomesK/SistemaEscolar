@@ -11,12 +11,18 @@ def clas_add():
     if clas_to_add in classes_all:
         print("essa classe já existe")
     else:
-        classes_all[gen_code()] = {"Estudantes": [], "Professores": [], "Matérias": [], "Nome": clas_to_add}
+        code = gen_code()
+        clas = {"Estudantes": [],
+                "Professores": [],
+                "Matérias": [],
+                "Nome": clas_to_add}
+        
+        classes_all[code] = clas
         print(classes_all)
         
 def remove_clas():
     show_clas()
-    remover = input("digite o código da turma a ser removido").upper
+    remover = input("digite o código da turma a ser removido: ").upper()
     if remover in classes_all:
         del classes_all[remover]
         print("Turma removida")

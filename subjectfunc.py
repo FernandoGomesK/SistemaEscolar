@@ -37,5 +37,5 @@ def assign_subject():
         else:
             print("comando inválido")          
     else:
-        print("esse professor não se encontra no sistema")
+        print("essa Matéria não se encontra no sistema")
 

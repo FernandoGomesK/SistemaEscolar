@@ -52,12 +52,12 @@ def register_student():
             print("endereço inválido")
             
     while True:
-        cell = input("digite o número de telefone do responsável (+** (**) *****-**): ").strip()
+        cell = input("digite o número de telefone do responsável (+** (**) *****-****): ").strip()
         if not cell:
             print("Por favor digite um número válido")
             continue      
         if not check_number(cell):
-            print("Número inválido, por favor digite no formato (+** (**) *****-**):")
+            print("Número inválido, por favor digite no formato (+** (**) *****-****):")
             continue
         break
         
@@ -83,7 +83,7 @@ def register_student():
 
 def remove_student():
     resumed_students()
-    remover = input("digite o código do Aluno a ser removido").upper
+    remover = input("digite o código do Aluno a ser removido: ").upper()
     if remover in students_full:
         del students_full[remover]
         print("Aluno Removido")
