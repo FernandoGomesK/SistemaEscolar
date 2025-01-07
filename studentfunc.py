@@ -1,5 +1,5 @@
 from generalfunc import gen_code, verify_gender, check_email, check_number
-from newdata import students_full, subjects, classes_all
+from data import students_full, subjects, classes_all
 from subjectfunc import show_subject
 from classesfunc import show_clas
 import random

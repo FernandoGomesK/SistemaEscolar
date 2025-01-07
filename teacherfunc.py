@@ -2,7 +2,7 @@
 # faker = Faker('pt_BR')
 from datetime import*
 import random
-from newdata import teachers_full, subjects, classes_all
+from data import teachers_full, subjects, classes_all
 from subjectfunc import show_subject
 import string
 from generalfunc import gen_code, verify_gender, check_email, check_number
