@@ -2,7 +2,7 @@ import random
 import string
 from faker import Faker 
 faker = Faker('pt_BR')
-from data import*
+from main.data import*
 
 def gen_code():
     num = ''.join(str(random.randint(0,9)) for _ in range(4))
