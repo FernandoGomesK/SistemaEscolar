@@ -50,7 +50,7 @@ def register_teacher():
             print("Por favor digite um número válido")
             continue      
         if not check_number(cell):
-            print("Número inválido")
+            print("Número inválido, por favor digite no formato (+** (**) *****-**):")
             continue
         break
         

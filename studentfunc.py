@@ -52,12 +52,12 @@ def register_student():
             print("endereço inválido")
             
     while True:
-        cell = input("digite o número de telefone do responsável: ").strip()
+        cell = input("digite o número de telefone do responsável (+** (**) *****-**): ").strip()
         if not cell:
             print("Por favor digite um número válido")
             continue      
         if not check_number(cell):
-            print("Número inválido")
+            print("Número inválido, por favor digite no formato (+** (**) *****-**):")
             continue
         break
         
