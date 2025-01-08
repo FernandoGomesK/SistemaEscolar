@@ -1,5 +1,3 @@
-# from faker import Faker
-# faker = Faker('pt_BR')
 from datetime import*
 import random
 from data import teachers_full, subjects, classes_all
@@ -93,10 +91,10 @@ def move_teacher_subject():
         show_subject()
         chose_subject = input("digite o código da matéria para adicionar o professor: ").upper()
         if chose_subject in subjects:
-            teachers_full[chose_teacher]['Materia'].append(subjects[chose_subject])
+            teachers_full[chose_teacher]['Materia'].append(subjects[chose_subject]['nome'])
         else:
             print("comando inválido")  
-        if chose_teacher not in subjects[chose_teacher]['Professores']:
+        if chose_teacher not in subjects[chose_subject]['Professores']:
             subjects[chose_subject]['Professores'].append(chose_teacher)       
     else:
         print("esse professor não se encontra no sistema")

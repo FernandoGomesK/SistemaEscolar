@@ -33,3 +33,9 @@ def check_number(x):
     if re.match(pattern, x):
         return True
     return False
+
+def check_time(x):
+    pattern = r'^(\d{1,3})'
+    if re.match(pattern, x):
+        return True
+    return False

@@ -1,5 +1,5 @@
 from data import subjects, classes_all
-from generalfunc import gen_code
+from generalfunc import gen_code, check_time
 from classesfunc import show_clas
 
 
@@ -9,7 +9,16 @@ def register_subject():
     if new_sub in subjects:
         print("essa matéria já existe")
     else:
-        subjects[sub_code] = {'nome': new_sub, 'Professores': []}
+        while True:
+            time = input("digite a carga horária da matéria: ").strip()
+            if not time:
+                print("digite uma carga horária válida")
+                continue
+            if not check_time(time):
+                print("carga horária inválida")
+            else:
+                subjects[sub_code] = {'nome': new_sub, 'Carga Horária': time, 'Professores': []}
+                break
         
 def show_subject():
     organized_sub = sorted(subjects.keys())
@@ -38,4 +47,3 @@ def assign_subject():
             print("comando inválido")          
     else:
         print("essa Matéria não se encontra no sistema")
-
