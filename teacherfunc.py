@@ -112,8 +112,8 @@ def move_teacher_clas():
             else:
                 print("esse Professor já se encontra nessa turma")
                 
-            if chose_clas not in teachers_full[chose_teacher]['Turma']:
-                teachers_full[chose_teacher]['Turma'].append(chose_clas)
+            if chose_clas not in teachers_full[chose_teacher]['Turmas']:
+                teachers_full[chose_teacher]['Turmas'].append(chose_clas)
             else:
                 print("Este Professor já se encontra nessa turma")   
                 
