@@ -9,7 +9,7 @@ def register_subject():
     if new_sub in subjects:
         print("essa matéria já existe")
     else:
-        subjects[sub_code] = [new_sub]
+        subjects[sub_code] = {'nome': new_sub, 'Professores': []}
         
 def show_subject():
     organized_sub = sorted(subjects.keys())

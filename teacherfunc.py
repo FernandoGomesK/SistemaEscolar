@@ -95,7 +95,9 @@ def move_teacher_subject():
         if chose_subject in subjects:
             teachers_full[chose_teacher]['Materia'].append(subjects[chose_subject])
         else:
-            print("comando inválido")          
+            print("comando inválido")  
+        if chose_teacher not in subjects[chose_teacher]['Professores']:
+            subjects[chose_subject]['Professores'].append(chose_teacher)       
     else:
         print("esse professor não se encontra no sistema")
         
